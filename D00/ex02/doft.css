@@ -1,0 +1,8 @@
+.container {
+    margin: 0 auto;
+    background-color:#909090;
+    border-radius:6px;
+    position: relative;
+    vertical-align:top;
+    box-shadow: 5px 5px 6px 3px;
+}
