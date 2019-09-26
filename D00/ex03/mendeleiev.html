@@ -1,35 +1,52 @@
+<!-- *********************************************************************** -->
+<!--                                                                         -->
+<!--                                                      :::      ::::::::  -->
+<!-- mendeleiev.html                                    :+:      :+:    :+:  -->
+<!--                                                  +:+ +:+         +:+    -->
+<!-- By: qbragard <marvin@42.fr>                    +#+  +:+       +#+       -->
+<!--                                              +#+#+#+#+#+   +#+          -->
+<!-- Created: 2019/09/19 14:11:15 by qbragard          #+#    #+#            -->
+<!-- Updated: 2019/09/19 17:24:58 by qbragard         ###   ########.fr      -->
+<!--                                                                         -->
+<!-- *********************************************************************** -->
+
 <!DOCTYPE html>
-<!-- saved from url=(0065)file:///Users/quentinbragard/Piscine_PHP/D00/ex01/mendeleiev.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-		<title>Mendeleiev</title>
-		<style>
+
+<HTML>
+	<HEAD>
+		<TITLE>Mendeleiev</TITLE>
+		<STYLE>
 			BODY {background-color:white;}
 			.line {
+				position:relative;
 				display:flex;
 				width:100%;
-				height:10vh;
+				height:auto;
 				}
+			.container {
+				width:100%;
+				height:auto;
+			}
 			.square {
 				position:relative;
-				width:10vh;
-				height:auto;
+				width:6vw;
+				height:10vh;
 				text-align:center;
 				margin-left:5px;
 				border-style:solid;
 				float:left;
 				flex-wrap:wrap;
-				min-height: 100px;
-				min-height: 100px;
 				overflow:hidden;
 				}
 			.number {
 				position:relative;
-				font-size: 0.8vw;
+				font-size: 0.7vw;
 				text-align:left;
+				bottom:-2vh;
 				}
 			.weight {
 				position:relative;
-				font-size:0.8vw;
+				font-size:0.7vw;
 				text-align:right;
 				}
 			.letter {
@@ -38,10 +55,19 @@
 				font-weight:bold;
 				text-align:center;
 				align-items: stretch;
+				bottom:-1.25vh;
 				}
 			.space {
 				position:relative;
-				flex-grow: 2;
+				width:10vh;
+				height:auto;
+				text-align:center;
+				margin-left:5px;
+				float:left;
+				flex-wrap:wrap;
+				min-height: 100px;
+				min-height: 100px;
+				overflow:hidden;
 			}
 			.resume {
 				position:relative;
@@ -53,16 +79,16 @@
 
 
 
-		</style>
-	</head>
+		</STYLE>
+	</HEAD>
 
-	<body>
+	<BODY>
 
 <!--Title-->
-		<img src="file:///Users/quentinbragard/Piscine_PHP/D00/ex01/logo.png" width="100" height="100&quot;" alt="" "logo="" 42"="">
-		<h1 style="color:#D1D2DD; text-align:center;">Mendeleiev table</h1><br>
+		<img src="logo.png" width=100 height=100" style="float:left;" alt "logo 42" ></img>
+		<H1 style="color:#D1D2DD; text-align:center;">Mendeleiev table</H1><br>
 
-
+<div class="container">
 <!-- Line 1-->
 
 		<div class="line">
@@ -72,6 +98,23 @@
 				<div class="number">1</div>
 			</div>
 
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
 			<div class="space"></div>
 
 			<div class="square" style="background-color:#F3A5EF">
@@ -95,6 +138,17 @@
 				<div class="number">4</div>
 			</div>
 
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
 			<div class="space"></div>
 
 			<div class="square" style="background-color:#34D587">
@@ -144,7 +198,18 @@
 		<div class="number">12</div>
 	</div>
 
-	<div class="space"></div>
+		<div class="space"></div>
+		<div class="space"></div>
+		<div class="space"></div>
+		<div class="space"></div>
+		<div class="space"></div>
+		<div class="space"></div>
+		<div class="space"></div>
+		<div class="space"></div>
+		<div class="space"></div>
+		<div class="space"></div>
+		<div class="space"></div>
+		<div class="space"></div>
 
 	<div class="square" style="background-color:#AFAFB8">
 		<div class="weight">26.892</div>
@@ -194,6 +259,7 @@
 				<div class="number">20</div>
 			</div>
 
+			<div class="space"></div>
 			<div class="space"></div>
 
 			<div class="square" style="background-color:#D1D2DD">
@@ -292,6 +358,7 @@
 		<div class="number">38</div>
 	</div>
 
+	<div class="space"></div>
 	<div class="space"></div>
 
 	<div class="square" style="background-color:#D1D2DD">
@@ -392,6 +459,7 @@
 	</div>
 
 	<div class="space"></div>
+	<div class="space"></div>
 
 	<div class="square" style="background-color:#FFFFFF">
 		<div class="weight" style="text-align:center;">Lanthanides</div>
@@ -489,6 +557,7 @@
 	</div>
 
 	<div class="space"></div>
+	<div class="space"></div>
 
 	<div class="square" style="background-color:#FFFFFF">
 		<div class="weight" style="text-align:center;">Actinides</div>
@@ -578,6 +647,10 @@
 		<div class="line">
 
 			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
+			<div class="space"></div>
 
 			<div class="square" style="background-color:#D49D61">
 				<div class="weight">138.91</div>
@@ -661,6 +734,10 @@
 <div class="line">
 
 	<div class="space"></div>
+	<div class="space"></div>
+	<div class="space"></div>
+	<div class="space"></div>
+	<div class="space"></div>
 
 	<div class="square" style="background-color:#F08DD3">
 		<div class="weight">227</div>
@@ -738,7 +815,6 @@
 		<div class="number">103</div>
 	</div>
 </div><br>
+</div>
 
-
-	
-</body></html>
+	</BODY>
