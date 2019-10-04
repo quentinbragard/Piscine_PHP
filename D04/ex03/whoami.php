@@ -1,0 +1,8 @@
+<?php
+if (!isset($_SESSION['loggued_on_user']) || $_SESSION['loggued_on_user'] == NULL)
+{
+    echo "ERROR\n";
+    exit ;
+}
+echo $_SESSION['loggued_on_user'];
+?>
