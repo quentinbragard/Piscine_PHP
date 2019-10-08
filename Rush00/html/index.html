@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chez Maurice</title>
+        <link rel="stylesheet" type="text/css" href="../css/chez_maurice.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+
+    <body>
+<!--Header-->
+		<div class="topnav">
+			<a class="active" href="../html/index.html">Accueil</a>
+			<a href="../html/produits.html">Nos produits</a>
+			<a href="../html/index.html">Notre histoire</a>
+			<a href="../html/index.html">Contacts</a>
+	  	</div>
+<!--Formuaire de connexion-->
+		<h2>Merci de vous connecter afin de pouvoir passer votre commande </h2>
+		<div class="container">
+			<div class="form-container">
+				<form action="../php/login.php" method="post">
+					<h1>Connexion</h1>
+					<a href="./account_creation.html">Vous êtes un nouveau client? Inscrivez-vous ici!</a>
+					<input type="text" placeholder="Email"  name="login"/>
+					<input type="password" placeholder="Password" name="passwd" />
+					<a href="#">Mot  de passe oublié</a>
+					<input class="info-validation" type="submit" value="OK" />
+				</form>
+  			</div>
+		</div>
+
+    </body>
+</html>

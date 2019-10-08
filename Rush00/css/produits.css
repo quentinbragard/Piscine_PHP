@@ -1,0 +1,75 @@
+/* Motif de fond issu de http://lea.verou.me/css3patterns/ */
+body {
+	background: #33AFFF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+  }
+
+
+.topnav {
+    background-color:#BDB76B;
+    position:relative;
+    width:100%;
+    display: flex;
+      justify-content: center;
+    align-items: center;
+    font-weight:bold;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    color: black;
+  }
+  
+  .product-grid {
+    background-color: rgba( 255, 255, 255, 1);
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, .1);
+    list-style-type: none;
+    margin: 50px auto;
+    padding: 10px;
+    width: 90%;
+  }
+  
+  .product-item a {
+    color: #333;
+    display: flex;
+    text-decoration: none;
+  }
+  
+  .product-item img {
+    background-color: #c5cae9;
+    border: 1px solid #7986cb;
+    display: block;
+    height: 150px;
+    flex: 0 0;
+    width: 150px;
+  }
+  
+  .product-item p {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    margin: 0;
+    padding-left: 10px;
+  }
+  
+  .product-item .price {
+    border-bottom: 1px solid #ddd;
+    margin-top: auto;
+    padding-bottom: 5px;
+    text-align: right;
+  }
+  
+  
