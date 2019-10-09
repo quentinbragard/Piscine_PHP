@@ -9,6 +9,7 @@ body {
 	flex-direction: column;
 }
 
+
 h1 {
 	font-weight: bold;
 	margin: 0;
@@ -34,17 +35,27 @@ a {
 	color: #333;
 	font-size: 14px;
 	text-decoration: none;
-	margin: 15px 0;
+}
+
+.decon {
+  background-color:#BDB76B;
+  position:relative;
+  width:100%;
+  font-weight:bold;
+  text-align:center;
+  text-decoration:underline;
+  color:black;
 }
 
 .topnav {
   background-color:#BDB76B;
   position:relative;
+  display:flex;
+  float:left;
   width:100%;
-  display: flex;
-	justify-content: center;
-  align-items: center;
+  justify-content: center;
   font-weight:bold;
+  margin-right:auto;
 }
 
 /* Style the links inside the navigation bar */
@@ -61,6 +72,11 @@ a {
 .topnav a:hover {
   color: black;
 }
+
+.decon:hover {
+	color: white;
+  }
+
 
 
 .info-validation{
@@ -125,3 +141,48 @@ input {
 	width: 50%;
 }
 
+
+/*Classes de la page produit*/
+
+.prod_page {
+	display: flex;
+	align-items: left;
+	justify-content: left;
+}
+.product-grid {
+    background-color: rgba( 255, 255, 255, 1);
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, .1);
+    list-style-type: none;
+    margin: auto;
+    width: 80%;
+  }
+
+  .product-item a {
+    color: #333;
+    display: flex;
+    text-decoration: none;
+  }
+  
+  .product-item img {
+    background-color: #c5cae9;
+    border: 1px solid #7986cb;
+    display: block;
+    flex: 0 0;
+  }
+  
+  .product-item p {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    margin: 0;
+    padding-left: 10px;
+  }
+  
+  .product-item .price {
+    border-bottom: 1px solid #ddd;
+    margin-top: auto;
+    padding-bottom: 5px;
+    text-align: right;
+  }
+
+  

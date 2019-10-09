@@ -8,6 +8,16 @@
 
     <body>
 
+<!--Header-->
+<a href ="../php/logout.php" class="decon">Deconnexion...</a>
+		<div class="topnav">
+			<a class="active" href="../html/index.html">Accueil</a>
+			<a href="../html/produits.html">Nos produits</a>
+			<a href="../html/index.html">Notre histoire</a>
+			<a href="../html/index.html">Contacts</a>
+			<a href="../html/index.html">Panier</a>
+		  </div>
+
 <!--Formuaire de connexion-->
 <h2>Bienvenue chez Maurice </h2>
 <div class="container">
@@ -15,8 +25,12 @@
 		<form action="../php/create.php" method="post">
 			<h1>Inscription</h1>
 			<a href="./index.html">Vous avez déjà un compte? Connectez-vous!</a>
-			<input type="text" placeholder="Email"  name="login"/>
-			<input type="password" placeholder="Password" name="passwd" />
+			<input type="text" placeholder="Prénom"  name="First_Name"/>
+			<input type="text" placeholder="Nom"  name="Last_Name"/>
+			<input type="text" placeholder="Email"  name="Email_Address"/>
+			<input type="text" placeholder="Téléphone"  name="Phone_Number"/>
+			<input type="text" placeholder="Programme"  name="Programm"/>
+			<input type="password" placeholder="Password" name="Password" />
 			<input class="info-validation" type="submit" value="OK" />
 		</form>
   </div>
