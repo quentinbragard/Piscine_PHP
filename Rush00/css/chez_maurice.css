@@ -191,10 +191,6 @@ input {
   font-size: 100%;
 }
 
-.chart-container{
-  display: flex;
-  margin-right: 50%;
-}
 .button-item{
   background: #BDB76B;
   text-transform: uppercase;
@@ -214,3 +210,21 @@ input {
   color:black;
   }
 
+
+  .chart-container{
+  background: #BDB76B;
+  border-radius: 25px;
+  color:white;
+  display:flex;
+  }
+
+  .qty
+  {
+    font-size:20px;
+    height:100%;
+    text-align:center;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50%;
+
+  }

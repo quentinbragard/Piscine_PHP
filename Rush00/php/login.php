@@ -9,7 +9,7 @@ if (!isset($_POST['login']) || !isset($_POST['passwd']))
 if (check_user($_POST['login'], $_POST['passwd']))
 {
     $_SESSION['loggued_on_user'] = $_POST['login'];
-    header('Location: ../html/produits.html');
+    header('Location: ../php/prod_display.php');
     echo "OK\n";
 }
 else

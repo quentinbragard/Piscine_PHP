@@ -14,10 +14,10 @@ $products = product_get($_GET['Prod_Category']);
 <a href ="../php/logout.php" class="decon">Deconnexion...</a>
 		<div class="topnav">
 			<a class="active" href="../html/index.html">Accueil</a>
-			<a href="../html/produits.html">Nos produits</a>
+			<a href="../php/prod_display.php">Nos produits</a>
 			<a href="../html/index.html">Notre histoire</a>
             <a href="../html/index.html">Contacts</a>
-            <a href="../html/index.html">Panier</a>
+            <a href="../php/display_chart.php">Panier</a>
 		  </div>
 <!--Category Selection-->
     <form class="category-container" action="../php/prod_display.php" methos="get">
@@ -32,7 +32,8 @@ $products = product_get($_GET['Prod_Category']);
         <input class= "button-item" type="submit" value="OK" />
     </form>
 <!--Prouduits-->
-<?php foreach($products as $elem){?>
+<?php foreach($products as $elem){
+    $total_qty = $elem['Prod_Qty'];?>
 <ul class="product-grid">
     <li class="product-block">
         <div class="product-item">
@@ -43,7 +44,11 @@ $products = product_get($_GET['Prod_Category']);
                 <span class="product-item"><?php echo $elem['Prod_Price']." €";?></span>
         </div>
                 <form action="add_to_chart.php" method="post">
-                    <input type="text"  placeholder="1" name="Desired_Qty" />
+                    <select  name="Desired_Qty">
+                        <?php while( $total_qty >= 0){?>
+                        <option value="<?php echo $elem['Prod_Qty'] - $total_qty;?>"><?php echo $elem['Prod_Qty'] - $total_qty;?></option>
+                        <?php $total_qty = $total_qty - 1;}?>
+                    </select>
                     <input type="hidden" name="Prod_Name" value="<?php echo $elem['Prod_Name']?>"/>
                     <input type="submit" value="Ajouter" />
                 </form>
