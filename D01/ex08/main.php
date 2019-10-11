@@ -1,8 +1,8 @@
 #!/usr/bin/php
 <?PHP
 include("ft_is_sort.php");
-$tab = array("!/@#;^", "42", "Hello World", "salut", "zZzZzZz");
-$tab[] = "Et qu’est-ce qu’on fait maintenant ?";
+$tab = array("!/@#;^", "42", "Hello World", "hi", "zZzZzZz");
+$tab[] = "What are we doing now ?";
 //foreach($tab as $elem)
     //print($elem."\n");
 if (ft_is_sort($tab))

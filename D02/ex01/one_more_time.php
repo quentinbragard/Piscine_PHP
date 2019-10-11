@@ -44,6 +44,6 @@ if ($hour[0] > 23 || $hour[1] > 59 || $hour[2] > 59)
     exit ;
 }
 array_shift($tab);
-date_default_timezone_set('UTC');
+date_default_timezone_set("Europe/Paris");
 print(mktime($hour[0], $hour[1], $hour[2], $tab[1], $tab[0], $tab[2])."\n");
 ?>

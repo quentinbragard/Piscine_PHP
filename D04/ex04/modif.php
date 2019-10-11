@@ -22,6 +22,8 @@ if ($users_database[$_POST['login']] != hash('whirlpool', $_POST['oldpw']))
 }
 $users_database[$_POST['login']] =  hash('whirlpool', $_POST['newpw']);
 file_put_contents("../private/passwd", serialize($users_database));
+ob_start();
 echo "OK\n";
-header("Location:index.html");
+header("Location: index.html");
+ob_end_flush();
 ?>

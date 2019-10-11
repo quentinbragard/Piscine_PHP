@@ -3,9 +3,13 @@
 while (1)
 {
 	print("Entrez un nombre: ");
-	$number = trim(fgets(STDIN));
-	if(feof(STDIN) == TRUE)
-		exit();
+	$str = trim(fgets(STDIN));
+	$number = $str[strlen($str) - 1];
+	if (feof(STDIN))
+	{
+		print "\n";
+		exit;
+	}
 	if (is_numeric($number))
 	{
 		print("Le chiffre $number ");

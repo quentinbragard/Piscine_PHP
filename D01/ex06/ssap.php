@@ -1,5 +1,7 @@
 #!/usr/bin/php
 <?PHP
+if ($argc < 2)
+        exit ;
 array_shift($argv);
 $my_string = implode(" ", $argv);
 $my_string = trim(preg_replace('/\s+/', ' ', $my_string));

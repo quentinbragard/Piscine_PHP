@@ -1,11 +1,15 @@
 <?php
 function ft_is_sort($tab)
 {
+    if (!$tab)
+        return (FALSE);
     $compare = $tab;
+    $rcompare = $tab;
     sort($compare);
-    if ($tab === $compare)
-        return (1);
+    rsort($rcompare);
+    if ($tab === $compare || $tab === $rcompare)
+        return (TRUE);
     else
-        return (0);
+        return (FALSE);
 }
 ?>

@@ -1,34 +1,41 @@
 #!/usr/bin/php
-<?php
-function upper($matches) {
-    return strtoupper($matches[0]);
-  }
-
-if ($argc == 1)
+<?PHP
+if ($argc <2)
     exit;
-$str = file_get_contents($argv[1]);
-//print($str)."\n";
-$test = "bonjour toto comment ca va titi tu fais du tutu?";
-preg_match_all('/<a(.*)\/a>/', $str, $match);
-foreach($match[0] as $elem)
-print($elem)."\n";
-$result = preg_replace_callback(
-    '/<a(.*)\/a>/',
-    function ($matches) {
-        return strtoupper($matches[0]);
-    } ,
-    $str);
-print($result)."\n\n";
-preg_match_all('/>(.*)\/a>/', $str, $match);
-foreach($match[0] as $elem)
-print($elem)."\n";
-$result = preg_replace_callback(
-    '/<a(.*)\/a>/',
-    function ($matches) {
-        return strtoupper($matches[0]);
-    } ,
-    $str);
-//print($result);
+$str = trim(file_get_contents($argv[1]));
+preg_match_all("/<a/", $str, $startmatch, PREG_OFFSET_CAPTURE);
+preg_match_all("/a>/", $str, $endmatch, PREG_OFFSET_CAPTURE);
+$i = 0;
+foreach ($startmatch as $occur)
+{
+    foreach ($occur as $number)
+    {
+        $sub = substr($str, $number[1], ($endmatch[0][$i][1] - $number[1] + 2));
+        $len = strlen($sub);
+        $y = 0;
+        while ($y < $len)
+        {
+            if ($sub[$y] == ">")
+            {
+                ++$y;
+                while ($sub[$y] != "<" && $y < $len)
+                {
+                    $str[$y + $number[1]] = strtoupper($str[$y + $number[1]]);
+                    ++$y;
+                }
+            }
+            ++$y;
+        }
+        if (preg_match("/title=/", $sub, $title, PREG_OFFSET_CAPTURE))
+               $y = $title[0][1] + 6;
+        while ($y < $len && $sub[$y] != ">")
+            {
+               $str[$y + $number[1]] = strtoupper($str[$y + $number[1]]);
+                ++$y;
 
-
+            }
+        ++$i;
+    }
+}
+print ($str);
 ?>

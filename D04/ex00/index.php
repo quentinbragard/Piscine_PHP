@@ -1,17 +1,10 @@
 <?php
 session_start();
-if (!isset($_SESSION['login']))
-    $_SESSION['login'] = "";
-if (!isset($_SESSION['passwd']))
-    $_SESSION['passwd'] = "";
-if (!isset($_GET['login']))
-    $_GET['login'] = $_SESSION['login'];
-if (!isset($_GET['passwd']))
-    $_GET['passwd'] = $_SESSION['passwd'];
-if ($_SESSION['login']  != $_GET['login'])
-    $_SESSION['login']  = $_GET['login'];
-if ($_SESSION['passwd'] != $_GET['passwd'])
-    $_SESSION['passwd'] = $_GET['passwd'];
+if ($_GET["submit"] == "OK")
+{
+    $_SESSION["login"]= $_GET["login"];
+    $_SESSION["passwd"] = $_GET["passwd"];
+}
 ?>
 <html>
     <body>

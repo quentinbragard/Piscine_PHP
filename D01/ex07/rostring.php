@@ -1,5 +1,7 @@
 #!/usr/bin/php
 <?php
+if ($argc < 2)
+    exit;
 $string = trim(preg_replace('/\s+/', ' ',$argv[1]));
 $i = 0;
 while ($i <= strlen($string) && $string[$i] != " ")

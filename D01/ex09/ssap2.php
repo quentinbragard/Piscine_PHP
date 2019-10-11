@@ -1,31 +1,60 @@
 #!/usr/bin/php
 <?PHP
-array_shift($argv);
-$my_string = implode(" ", $argv);
-$my_string = trim(preg_replace('/\s+/', ' ', $my_string));
-$my_tab = explode(" ", $my_string);
-$number = array(NULL);
-$letter = array(NULL);
-$garbage = array(NULL);
-foreach($my_tab as $elem)
+function    compare_spec($a, $b)
 {
-    if (is_numeric($elem))
-        $number = array_merge($number, array($elem));
-    else if(ctype_alpha($elem))
-        $letter = array_merge($letter, array($elem));
+    $len_a = strlen($a);
+    $len_b = strlen($b);
+    if ($len_a > $len_b)
+        $len = $len_b;
     else
-        $garbage = array_merge($garbage, array($elem));
+        $len = $len_a;
+    $i = 0;
+    while ($i < $len)
+    {
+        if (ctype_alpha($a[$i]) && !(ctype_alpha($b[$i])))
+            return (-1);
+        else if (!(ctype_alpha($a[$i])) && ctype_alpha($b[$i]))
+            return (1);
+        else if (ctype_alpha($a[$i]) && ctype_alpha($b[$i]))
+            {
+                if (strcasecmp($a[$i], $b[$i]) > 0)
+                    return (1);
+                else if (strcasecmp($a[$i], $b[$i]) < 0)
+                    return (-1);
+            }
+        else if (is_numeric($a[$i]) && !(is_numeric($b[$i])))
+            return (-1);
+        else if (!(is_numeric($a[$i])) && (is_numeric($b[$i])))
+            return (1);
+        else if (is_numeric($a[$i]) && is_numeric($b[$i]))
+            {
+                if ($a[$i] > $b[$i])
+                    return (1);
+                else if ($a[$i] < $b[$i])
+                    return (-1);
+            }
+        else if ($a[$i] > $b[$i])
+            return (1);
+        else if ($a[$i] < $b[$i])
+            return (-1);
+        ++$i;
+    }
+    if ($len_a > $len_b)
+        return (1);
+    else if ($len_a < $len_b)
+        return (-1);
+    return (0);
 }
-array_shift($letter);
-array_shift($number);
-array_shift($garbage);
-natcasesort($letter);
-sort($number, SORT_STRING);
-natcasesort($garbage);
-foreach($letter as $elem)
-print($elem."\n");
-foreach($number as $elem)
-print($elem."\n");
-foreach($garbage as $elem)
-print($elem."\n");
+
+if ($argc < 2)
+    exit;
+foreach ($argv as $arg)
+{
+    if ($arg != $argv[0])
+        $str = $str." ".$arg;
+}
+$tab = explode(" ", preg_replace("/\s+/", " ", trim($str)));
+usort($tab, compare_spec);
+foreach ($tab as $elem)
+    print "$elem\n";
 ?>

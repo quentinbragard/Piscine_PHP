@@ -1,37 +1,67 @@
 #!/usr/bin/php
-<?php
+<?PHP
 if ($argc != 2)
 {
-    print("Incorrect Parameters\n");
+    echo "Incorrect Parameters\n";
     exit;
 }
-$param = trim(preg_replace('/\s+/', '', $argv[1]));
-if (!preg_match("/\*|\+|\-|\/|%/", $param, $tab1))
+function    operator($l)
 {
-    print("Syntax Error\n");
-    exit ;
+    if (($l == '+') || ($l == "-") || ($l == "*") || ($l == "/") || ($l == "%"))
+        return (1);
+    return (0);
 }
-$tab2 = preg_split("/\*|\+|\-|\/|%/", $param, PREG_SPLIT_DELIM_CAPTURE);
-$tab = array($tab2[0], $tab1[0], $tab2[1]);
-if (count($tab) != 3 || !is_numeric($tab[0]) || !is_numeric($tab[2]))
+$i = 0;
+$str = preg_replace("/\s+/", "", (trim($argv[1])));
+$tab = explode(" ", preg_replace("/\s+/", " ", (trim($argv[1]))));
+if ($tab[3])
 {
-    print("Syntax Error\n");
-    exit ;
+    echo "Syntax Error\n";
+    exit;
 }
-if (!in_array(trim($tab[1]), array("+", "-", "*", "/", "%")))
+$len = strlen($str);
+while (is_numeric($str[$i]) || ($i == 0 && ($str[$i] == "-" || $str[$i] == "+")))
 {
-    print("Syntax Error\n");
-    exit ;
+    $str1 = $str1.$str[$i];
+    ++$i;
 }
-if (trim($tab[1]) == "+")
-print($tab[0] + $tab[2]);
-if (trim($tab[1]) == "-")
-print($tab[0] - $tab[2]);
-if (trim($tab[1]) == "*")
-print($tab[0] * $tab[2]);
-if (trim($tab[1]) == "/")
-print($tab[0] / $tab[2]);
-if (trim($tab[1]) == "%")
-print($tab[0] % $tab[2]);
-print("\n");
+if ($i == 0 || !(operator($str[$i])))
+{
+    echo "Syntax Error\n";
+    exit;
+}
+$op = $str[$i];
+++$i;
+$option = $i;
+while ($i < $len)
+{
+    if (!(is_numeric($str[$i])) && !($i == $option && ($str[$option] == "+" || $str[$option] == "-")))
+    {
+        echo "Syntax Error\n";
+        exit;
+    }
+    $str3 = $str3.$str[$i];
+    ++$i;
+}
+if ($op == "+")
+    print $str1 + $str3;
+if ($op == "-")
+    print $str1 - $str3;
+if ($op == "*")
+    print $str1 * $str3;
+if ($op == "/")
+{
+    if ($str3 == 0)
+        print 0;
+    else
+        print $str1 / $str3;
+}
+if ($op == "%")
+{
+    if ($str3 == 0)
+        print 0;
+    else
+        print $str1 % $str3;
+}
+print "\n";
 ?>

@@ -1,41 +1,44 @@
 <!DOCTYPE html>
-​
+
 <html>
 	<head>
-		<title>Day of The 42</title>
 		<link rel="stylesheet" type="text/css" href="doft.css">
+		<title>Day of the 42</title>
 	</head>
-​
-​
-<body style="background-color:#505050;">
-	<div class="container" style="height: 16vh; width: 76vw;">
-		<img src="./resources/day_of_the_42.png" alt="Day of the 42" height=80% title="day" style=" border-radius:6px; margin-left:1vw; margin-top:1vh"></img>
-		<a href="https://www.disney.com"><img src="./resources/reload.png" alt="reload" width=1.5% height=12% title="Start from the beginning" style="position: absolute; top:1vh; right:1vw;"></img></a>
-        <a href="https://www.relaischateaux.com"><img src="./resources/close.gif" alt="close" width=1.5% height=12% title="disconnect" style= "position: absolute; bottom: 1vh; right:1vw; "></img></a>
-        <img src="./resources/loupe.png" alt="loupe" height=100% title="loupe" style= "position: absolute; bottom: -2vh; right:2vw;"></img>
-    </div>
-    <div style = "width: 100%; margin-top:2vh; text-align: center; letter-spacing: 1.5vw">
-        <div class="container" style="display: inline-block; height: 46vh; width: 7.5vw">
-			<img src="./resources/arrow.png" alt="Advance" width=50% height=16% title="Advance" style="border-radius:6px; margin-top:2vh"></img>
-			<img src="./resources/main.png" alt="Take" width=50% height=16% title="Take" style="border-radius:6px; margin-top:0.75vh"></img>
-			<img src="./resources/oeil.png" alt="Look" width=50% height=16% title="Look" style="border: solid red 4px; border-radius:6px; margin-top:0.75vh"></img>
-			<img src="./resources/outil.png" alt="Use" width=50% height=16% title="Use" style="border-radius:6px; margin-top:0.75vh"></img>
-			<img src="./resources/chat-icon.png" alt="Speak" width=50% title="Speak" height=16% style="border-radius:6px; margin-top:0.75vh"></img>
-		</div>
-        <div class="container" style="display: inline-block; height: 62vh; width: 54vw">
-			<a href="https://www.ikea.com"><div style="position: absolute; margin-top:34vh; margin-left:17vw; height:25vh; width:8vw"></div></a>
-			<a href="https://www.apple.com"><div style="position: absolute; margin-top:34vh; margin-left:42vw; height:18vh; width:10vw"></div></a>
-			<img src="./resources/cluster.jpg" alt="cluster" title="cluster" width=97% height=97% style="margin-top:1vh"></img>
-		</div>
-        <div class="container" style="display: inline-block; height: 46vh; width: 7.5vw;">
-			<img src="./resources/book.png" alt="book" title="book" width=50% height=16% style="border-radius:6px; margin-top:2vh"></img>
-			<img src="./resources/towel.png" alt="towel" title="towel" width=50% height=16% style="border-radius:6px; margin-top:0.75vh"></img>
-			<div style="width: 85%; height: 16%; margin:0 auto; letter-spacing: 0; font-size: 0; background-image: url(resources/brick.jpg); background-repeat: repeat;"></div>
-		</div>
-    </div>
-	<div class="container" style="background-color:	#87FA8D; position: absolute; height:18vh; width:28vw; left:10vw; margin-top: -8vh">
-		<p style="padding-left: 0.7vw; margin-top: 0.7vh; font-size:2vh; font-family:system-ui">Vous <span style="font-size: 3.5vh">entrez</span> alors dans une grande pièce remplie d'<span style="text-shadow: red 2px 5px 3px;">ordinateurs</span>...
-		<br /> <span style="font-style:italic;">- Bonjour, vous êtes nouveau ici ?</span><br> <input style="border:inset 0.1rem; height: 1.7vh; width:70%"type="text" name="fname"><button style="margin-left: 0.4vw; font-size:1.7vh; text-align: center; height: 2.4vh; border-radius:2.5px;background-color:#edece6; border:1px solid grey">Repondre</button></p>
+<style>
+</style>
+<body>
+	<div class="header" title="header" alt="header">
+		<img src="./resources/day_of_the_42.png" id="dayof42" title="Logo" alt="logo"></img>
+		<a href="https://www.relaischateaux.com"><img src="./resources/close.gif" id="close" alt="Disconnect" title="Disconnect" alt="close"></img></a>
+		<a href="https://www.disney.com"><img src="./resources/reload.png" id="reload" title="Start from the beginning" alt="reload"></img></a>
+		<img src="./resources/loupe.png" id="loupe" title="Loupe"></img>
+	</div>
+	<div class="container" alt="container" title="container">
+	<div class="rightbox" alt="rightbox" title="rightbox">
+		<img src="./resources/book.png" id="book" title="Book" alt="book"></img>
+		<BR />
+		<img src="./resources/towel.png" id="towel" title="Towel" alt="towel"></img>
+		<div id="brick" title="brick" alt="brick"></div>
+	</div>
+	<div class="leftbox" title="leftbox" alt="leftbox">
+		<img src="./resources/arrow.png" class="button" alt="Advance" title="Advance"></img>
+		<img src="./resources/main.png" class="button" alt="Take" title="Take"></img>
+		<img src="./resources/oeil.png" id="eye" alt="Look" title="Look"></img>
+		<img src="./resources/outil.png" class="button" alt="Use" title="Use"></img>
+		<img src="./resources/chat-icon.png" class="button" alt="Speak" title="Speak"></img>
+	</div>
+	<div class="centerbox" alt="centerbox" title="centerbox">
+		<map name="mapcluster">
+		<area shape="rect" coords="330, 330, 450, 540" href="http://www.ikea.com" title="Ikea" alt="Ikea">
+		<area shape="rect" coords="790, 312, 976, 456" href="http://www.apple.com" title="Apple" alt="Apple">
+		</map>
+		<img usemap="#mapcluster" width="1000" height="565" src="./resources/cluster.jpg" id="cluster" alt="Cluster" title="Cluster"></img>
+	</div>
+	<div class="box" alt="textbox" title="textbox">
+		<p class="text">Vous <span id="entry">entrez</span> alors dans une grande salle remplie <span id="ordi">d'ordinateurs</span>... <BR \><i>- Bonjour, vous êtes nouveau ici ?</i></p>
+		<input type="text" id="answer" name="answer" alt="textans" title="textans">
+		<input type="submit" value="Repondre" alt="submit" title="submit">
 	</div>
 </body>
 </html>

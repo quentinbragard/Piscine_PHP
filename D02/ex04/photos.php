@@ -1,25 +1,26 @@
 #!/usr/bin/php
 <?php
-if ($argc == 1)
-    exit ;
+if ($argc < 2)
+    exit;
 $c = curl_init($argv[1]);
-curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
-$str = curl_exec($c);
-preg_match_all('/<img.*?src="(.*?)"[^\>]+>/', $str, $matches);
-foreach($matches[0] as $elem)
-    print($elem."\n");
-
-//$img = '42_logo_black.svg';  
-//file_put_contents($img, file_get_contents("https://www.42.fr/wp-content/themes/42/images/42_logo_black.svg"));
-foreach($matches[0] as $elem)
+curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($c, CURLOPT_BINARYTRANSFER, true);
+$content = curl_exec($c);
+$str = trim(preg_replace('/\//', "", $argv[1]));
+$str = preg_replace('/https:|http:/', "", $str);
+$dir = getcwd()."/".$str."/";
+if (!($error = mkdir($dir)))
+    exit;
+preg_match_all('/img src="(.*?)"/', $content, $match);
+$links = $match[1];
+foreach ($links as $link)
 {
-$imgss = explode("src=", $elem);
-$imgs = explode('"', $imgss[1]);
-$url = $imgs[1];
-$img = explode("/", $url);
-foreach($img as $elem)
-$img_name = $img[substr_count($url, "/")];
-file_put_contents($img_name, file_get_contents($url));
+    $name = preg_replace("/^(.*[\/])/", "", $link);
+    $name = $dir.$name;
+    if (!(preg_match("/http/", $link)))
+        copy($argv[1].$link, $name);
+    else
+        copy($link, $name);
 }
+curl_close($c);
 ?>
-

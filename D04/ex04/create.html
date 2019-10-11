@@ -1,14 +1,17 @@
 <html>
-    <head>
-        <title>Create Account</title>
-    </head>
-
-    <body>
-        <form action="create.php" method="post">
-            <div><span style="float:left;">Identifiant :</span><input type="text" name="login" /></div>
-            <div><span style="float:left;">Mot de Passe :</span><input type="password" name="passwd" /></div><br>
-            <input type="submit" value="OK" />
-        </form>
-    </body>
-    
+<head>
+    <link rel="action" href="create.php">
+</head>
+<body>
+    <p> Creez votre compte :</p>
+    <form action="create.php" method="POST">
+        <fieldset type="hidden">
+    Identifiant:  <input type="text" name="login">
+    <BR \>
+    Mot de passe: <input type="password" name="passwd">
+    <input type="submit" name="submit" value="OK">
+        </fieldset>
+    </form>
+    <a href="index.html">Retournez a l'acceuil</a>
+</body>
 </html>

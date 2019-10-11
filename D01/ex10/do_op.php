@@ -1,24 +1,36 @@
 #!/usr/bin/php
-<?php
-if ($argc != 4 || !is_numeric($argv[1]) || !is_numeric($argv[3]))
+<?PHP
+if ($argc != 4)
 {
-    print("Incorrect Parameters\n");
+    print "Incorrect parameters\n";
     exit;
 }
-if (!in_array(trim($argv[2]), array("+", "-", "*", "/", "%")))
+$str = "";
+foreach ($argv as $val)
 {
-    print("Incorrect Parameters\n");
-    exit;
+    if (strcmp($val,$argv[0]))
+        $str = $str." ".$val;
 }
-if (trim($argv[2]) == "+")
-    print($argv[1] + $argv[3]);
-if (trim($argv[2]) == "-")
-    print($argv[1] - $argv[3]);
-if (trim($argv[2]) == "*")
-    print($argv[1] * $argv[3]);
-if (trim($argv[2]) == "/")
-    print($argv[1] / $argv[3]);
-if (trim($argv[2]) == "%")
-    print($argv[1] % $argv[3]);
-print("\n");
+$tab = explode(" ", preg_replace("/\s+/", " ", (trim($str))));
+if (!(strcmp($tab[1], "+")))
+    echo $tab[0] + $tab[2];
+if (!(strcmp($tab[1], "-")))
+    echo $tab[0] - $tab[2];
+if (!(strcmp($tab[1], "*")))
+    echo $tab[0] * $tab[2];
+if (!(strcmp($tab[1], "/")))
+{
+    if ($tab[2] == 0)
+        echo 0;
+    else
+        echo $tab[0] / $tab[2];
+}
+if (!(strcmp($tab[1], "%")))
+{
+    if ($tab[2] == 0)
+        echo 0;
+    else
+        echo $tab[0] % $tab[2];
+}
+echo "\n";
 ?>

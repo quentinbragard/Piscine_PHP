@@ -10,12 +10,12 @@ while ($sub) {
     $array = unpack($typedef, $sub);
     if (!strcmp(trim($array[user]), $usr) && $array[type] == 7)
     {
-        $date = date("M  j H:i", $array["time1"]);
+        $date = date("M j H:i", $array["time1"]);
         $line = trim($array[line]);
-        $line = $line . "  ";
+        $line = $line . " ";
         $usrr = trim($array[user]);
-        $usrr = $usrr . "  ";
-        $tab = array($usrr.$line.$date);
+        $usrr = $usrr . " ";
+        $tab = array($usrr.$line." ".$date);
         $e = array_merge($e, $tab);
     }
     $sub = substr($sub, 628);		

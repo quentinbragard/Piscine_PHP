@@ -28,11 +28,7 @@ else
         header('HTTP/1.0 401 Unauthorized');
         header('Content-Length: 72');
         ?>
-        <html>
-            <body>
-                Cette zone est accessible uniquement aux membres du site
-            </body>
-        </html>
+        <html><body>Cette zone est accessible uniquement aux membres du site</body></html>
     <?php
     }
 }
