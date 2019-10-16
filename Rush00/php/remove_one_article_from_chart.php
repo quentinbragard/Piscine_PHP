@@ -1,6 +1,6 @@
 <?php
 session_start();
 include("chart_functions.php");
-add_article_to_chart($_POST['Prod_Name'], $_POST['Desired_Qty']);
+remove_one_article_from_chart($_POST['Prod_Name']);
 header('Location: ../php/display_chart.php')
 ?>

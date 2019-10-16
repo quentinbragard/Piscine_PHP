@@ -55,5 +55,16 @@ $products = product_get($_GET['Prod_Category']);
     </li>
 </ul>
 <?php } ?>
+<!--Footer-->
+<div style="width=100%;border:solid;"></div>
+<div class="topnav" style="position:fixed;bottom:0;">
+	<a class="active" href="../html/index.html">Accueil</a>
+	<a href="../html/produits.html">Nos produits</a>
+	<a href="../html/index.html">Notre histoire</a>
+	<a href="../html/index.html">Contacts</a>
+	<a href="../html/index.html">Panier</a>
+  </div>
+
     </body>
 </html>
+

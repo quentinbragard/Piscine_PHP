@@ -46,6 +46,12 @@ a {
   color:black;
 }
 
+
+.decon:hover {
+	color: white;
+  }
+
+
 .topnav {
   background-color:#BDB76B;
   position:relative;
@@ -57,24 +63,12 @@ a {
   margin-right:auto;
 }
 
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
+
 
 /* Change the color of links on hover */
-.topnav a:hover {
+.bottomnav a:hover {
   color: black;
 }
-
-.decon:hover {
-	color: white;
-  }
 
 
 
