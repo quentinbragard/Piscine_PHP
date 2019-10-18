@@ -2,6 +2,7 @@
 session_start();
 $chart = $_SESSION['chart'];
 $length = count($chart['Prod_Name']);
+$count = 0;
 ?>
 <html>
     <head>
@@ -13,7 +14,7 @@ $length = count($chart['Prod_Name']);
 <!--Header-->
 <a href ="../php/logout.php" class="decon">Deconnexion...</a>
 		<div class="topnav">
-			<a class="active" href="../html/index.html">Accueil</a>
+			<a class="active" href="../php/home.php">Accueil</a>
 			<a href="../php/prod_display.php">Nos produits</a>
 			<a href="../html/index.html">Notre histoire</a>
             <a href="../html/index.html">Contacts</a>
@@ -21,12 +22,9 @@ $length = count($chart['Prod_Name']);
 		  </div>
 
 <!--Produits-->
-<?php if ($length == 0){?>
-    <div class="container">Votre Panier est vide! Pour séléctionner d'autres produits, rendez-vous <a href = "../php/prod_display.php">ici</a></div>  
-<?php
-}
-while ($length > 0){
-    if ($chart['Prod_Qty'][$length - 1] > 0){?>
+<?php while ($length > 0){
+    if ($chart['Prod_Qty'][$length - 1] > 0){
+        $count += 1;?>
     <ul class="product-grid">
         <li class="product-block">
             <div class="product-item">
@@ -47,15 +45,17 @@ while ($length > 0){
     <?php
     } 
     $length = $length - 1;
-} ?>
+} 
+if ($count == 0){?>
+    <div class="container">Votre Panier est vide! Pour séléctionner d'autres produits, rendez-vous <a href = "../php/prod_display.php">ici</a></div> <?php } ?>
+
 <!--Footer-->
+
+<div style ="width:100%; height:200px;"></div>
 <div class="topnav" style="position:fixed;bottom:0;">
-	<a class="active" href="../html/index.html">Accueil</a>
-	<a href="../html/produits.html">Nos produits</a>
-	<a href="../html/index.html">Notre histoire</a>
-	<a href="../html/index.html">Contacts</a>
-	<a href="../html/index.html">Panier</a>
-  </div>
+	<a href="../html/produits.html">Contacts</a>
+	<a href="../php/admin_home.php">Espace Administrateur</a>
+</div>
 
     </body>
 </html>

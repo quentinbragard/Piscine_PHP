@@ -10,7 +10,6 @@ function price_get($Prod_Name)
         $stmt = $conn->prepare("SELECT Prod_Price FROM products WHERE Prod_Name = '$Prod_Name'"); 
         $stmt->execute();
         $result = $stmt->fetchAll();
-        print_r($result);
         return ($result);
     }
     catch(PDOException $e)

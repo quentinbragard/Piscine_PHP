@@ -9,7 +9,6 @@ function add_cust_to_db($First_Name, $Last_Name, $Email_Address, $Phone_Number, 
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "INSERT INTO Customers (First_Name, Last_Name, Email_Address, Phone_Number, Program, ID)
         VALUES ('$First_Name', '$Last_Name', '$Email_Address', '$Phone_Number', '$Program', NULL)";
-        // use exec() because no results are returned
         $conn->exec($sql);
         echo "New record created successfully\n";
         $stmt = $conn->prepare("SELECT Email_Address, ID FROM customers WHERE Email_Address = '$Email_Address'"); 
@@ -20,7 +19,6 @@ function add_cust_to_db($First_Name, $Last_Name, $Email_Address, $Phone_Number, 
         echo "ID = ".$ID."\n";
         $sql = "INSERT INTO Passwords (ID, Password)
         VALUES ('$ID', '$pwd')";
-        // use exec() because no results are returned
         $conn->exec($sql);
         echo "Password added\n";
     }

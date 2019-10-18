@@ -38,5 +38,6 @@ function product_get($Prod_Category)
         }
         $conn = null;
     }
+    
 }
 ?>

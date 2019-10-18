@@ -13,7 +13,7 @@ $products = product_get($_GET['Prod_Category']);
 <!--Header-->
 <a href ="../php/logout.php" class="decon">Deconnexion...</a>
 		<div class="topnav">
-			<a class="active" href="../html/index.html">Accueil</a>
+			<a class="active" href="../php/home.php">Accueil</a>
 			<a href="../php/prod_display.php">Nos produits</a>
 			<a href="../html/index.html">Notre histoire</a>
             <a href="../html/index.html">Contacts</a>
@@ -50,20 +50,20 @@ $products = product_get($_GET['Prod_Category']);
                         <?php $total_qty = $total_qty - 1;}?>
                     </select>
                     <input type="hidden" name="Prod_Name" value="<?php echo $elem['Prod_Name']?>"/>
-                    <input type="submit" value="Ajouter" />
+                    <input type="submit" name="submit" value="Ajouter" />
                 </form>
     </li>
 </ul>
 <?php } ?>
+
 <!--Footer-->
-<div style="width=100%;border:solid;"></div>
+
+<div style ="width:100%; height:200px;"></div>
 <div class="topnav" style="position:fixed;bottom:0;">
-	<a class="active" href="../html/index.html">Accueil</a>
-	<a href="../html/produits.html">Nos produits</a>
-	<a href="../html/index.html">Notre histoire</a>
-	<a href="../html/index.html">Contacts</a>
-	<a href="../html/index.html">Panier</a>
-  </div>
+	<a href="../html/produits.html">Contacts</a>
+	<a href="../php/admin_home.php">Espace Administrateur</a>
+</div>
+
 
     </body>
 </html>

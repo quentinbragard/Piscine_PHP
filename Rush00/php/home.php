@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+session_start();
+if (!isset($_SESSION['loggued_on_user']))
+    header('Location:../html/index.html');
+else
+{?>
 <html>
     <head>
         <title>Chez Maurice</title>
@@ -15,23 +20,9 @@
 			<a href="../html/index.html">Notre histoire</a>
 			<a href="../html/index.html">Contacts</a>
             <a href="../php/display_chart.php">Panier</a>
-		  </div>
-
-<!--Formuaire de connexion-->
-		<h2>Merci de vous connecter afin de pouvoir passer votre commande </h2>
-		<div class="container">
-			<div class="form-container">
-				<form action="../php/login.php" method="post">
-					<h1>Connexion</h1>
-					<a href="./account_creation.html">Vous êtes un nouveau client? Inscrivez-vous ici!</a>
-					<input type="text" placeholder="Email"  name="login"/>
-					<input type="password" placeholder="Password" name="passwd" />
-					<a href="#">Mot  de passe oublié</a>
-					<input class="info-validation" type="submit" name="submit" value="OK" />
-				</form>
-  			</div>
-		</div>
-
+          </div>
+          
+<p>Bonjour <?php echo $_SESSION['loggued_on_user'];?> <br>Welcome Back mon ami :)</p>
 <!--Footer-->
 
 <div style ="width:100%; height:200px;"></div>
@@ -42,3 +33,4 @@
 
     </body>
 </html>
+<?php } ?>
