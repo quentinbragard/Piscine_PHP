@@ -15,7 +15,7 @@ else
 <!--Header-->
 <a href ="../php/logout.php" class="decon">Deconnexion...</a>
 		<div class="topnav">
-			<a class="active" href="../php/home.php">Accueil</a>
+			<a class="active" href="../php/index.php">Accueil</a>
 			<a href="../php/prod_display.php">Nos produits</a>
 			<a href="../html/index.html">Notre histoire</a>
 			<a href="../html/index.html">Contacts</a>
@@ -23,6 +23,9 @@ else
           </div>
           
 <p>Bonjour <?php echo $_SESSION['loggued_on_user'];?> <br>Welcome Back mon ami :)</p>
+<form action="../php/account_delete.php" method="post">
+	<input class="info-validation" type="submit" name="submit" value="Supprimer votre compte" />
+</form>
 <!--Footer-->
 
 <div style ="width:100%; height:200px;"></div>
