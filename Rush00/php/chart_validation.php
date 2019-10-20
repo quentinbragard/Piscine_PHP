@@ -32,6 +32,5 @@ if (isset($_SESSION['loggued_on_user']))
         return (FALSE);
     }
     $conn = null;
-    echo "OK";
 }
 ?>
