@@ -22,6 +22,7 @@ $count = 0;
 		  </div>
 
 <!--Produits-->
+<?php $total = 0?>
 <?php while ($length > 0){
     if ($chart['Prod_Qty'][$length - 1] > 0){
         $count += 1;?>
@@ -38,15 +39,26 @@ $count = 0;
             </div>
             <form action="remove_one_article_from_chart.php" method="post">
                     <input type="hidden" name="Prod_Name" value="<?php echo $chart['Prod_Name'][$length - 1]?>"/>
-                    <input type="submit" value="Retirer" />
-                </form>
+                    <input type="submit" value="Retirer"/>
+                    <?php $article_total = $chart['Prod_Price'][$length - 1] * $chart['Prod_Qty'][$length - 1]; ?>
+                    <span class="article_total"><?php echo $article_total." €"; ?></span>
+            </form>
         </li>
     </ul>
     <?php
     } 
     $length = $length - 1;
-} 
-if ($count == 0){?>
+    $total = $total + $article_total;
+}?>
+<?php if ($total > 0) { ?> 
+<div class ="total">
+    <span class="total_text"><?php echo "Total " .$total." €";?></span>
+    <form action="" method="">
+        <input type="submit" value="Order"/>
+    </form> 
+</div>
+<?php }
+    if ($count == 0){?>
     <div class="container">Votre Panier est vide! Pour séléctionner d'autres produits, rendez-vous <a href = "../php/prod_display.php">ici</a></div> <?php } ?>
 
 <!--Footer-->
