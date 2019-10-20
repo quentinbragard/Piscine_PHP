@@ -14,7 +14,7 @@ $count = 0;
 <!--Header-->
 <a href ="../php/logout.php" class="decon">Deconnexion...</a>
 		<div class="topnav">
-			<a class="active" href="../php/home.php">Accueil</a>
+			<a class="active" href="../php/index.php">Accueil</a>
 			<a href="../php/prod_display.php">Nos produits</a>
 			<a href="../html/index.html">Notre histoire</a>
             <a href="../html/index.html">Contacts</a>
@@ -49,13 +49,12 @@ $count = 0;
     } 
     $length = $length - 1;
     $total = $total + $article_total;
+    $_SESSION['Order_Price'] =  $total;
 }?>
 <?php if ($total > 0) { ?> 
 <div class ="total">
     <span class="total_text"><?php echo "Total " .$total." €";?></span>
-    <form action="" method="">
-        <input type="submit" value="Order"/>
-    </form> 
+    <a href="chart_validation.php">Passer Votre commande</a>;
 </div>
 <?php }
     if ($count == 0){?>

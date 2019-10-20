@@ -11,7 +11,7 @@ if ($_GET["submit"] == "OK")
         <form action="index.php" method="get">
             <div><span style="float:left;">Identifiant :</span><input type="text" name="login" value="<?php echo $_SESSION['login']?>" /></div>
             <div><span style="float:left;">Mot de Passe :</span><input type="password" name="passwd" value="<?php echo $_SESSION['passwd']?>" /></div><br>
-            <input type="submit" value="OK" />
+            <input type="submit" name="submit"value="OK" />
         </form>
     </body>
 </html>
