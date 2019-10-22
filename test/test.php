@@ -17,3 +17,4 @@ if (isset($_POST['pwd']) && $_POST['pwd'] == "kangourou")
     echo "FELICITATIONS, vous avez trouvé le bon mot de passe!!\n";
 ?>
 
+SELECT (REPLACE(CONCAT(`phone_number`, '42'),7 ,9) AS 'ft5')
