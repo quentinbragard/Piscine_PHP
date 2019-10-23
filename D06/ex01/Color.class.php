@@ -44,7 +44,7 @@ Class Color
 
     public function __toString()
     {
-        return ("Color( red: ".$this->red.", green: ".$this->green.", blue: ".$this->blue." )");
+        return ("Color( red: ".str_pad($this->red, 4, ' ',STR_PAD_LEFT).", green: ".str_pad($this->green, 4, ' ',STR_PAD_LEFT).", blue: ".str_pad($this->blue, 4, ' ',STR_PAD_LEFT)." )");
     }
 
     public function add(Color $col)

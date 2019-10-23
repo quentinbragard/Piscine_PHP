@@ -1,0 +1,13 @@
+- Matrix ----------------------------------------------------------------------
+Classe qui permet de gerer la creation d'un vertex a partir de ses proprietes :
+- x (obligatoire)
+- y (obligatoire)
+- z (obligatoire)
+- w (optionnel, égal à 1 par défaut)
+- Color (issue de la Class Color, optionnel, blanc par défaut)
+
+Les attributs sont declares en private, et il existe en plus de construct / destruct
+les methodes GET et SET pour creer l'instance Vertex
+
+Une methode tostring et doc existent egalement pour avoir plus d'infos
+---------------------------------------------------------------------- Matrix ->

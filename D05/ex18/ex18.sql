@@ -1,6 +1,8 @@
 USE db_qbragard;
-SELECT `name`, `id_distrib`
+SELECT `name`
 FROM distrib
-WHERE `id_distrib` IN (42, 62, 63, 64, 65, 66, 67, 68, 69, 71, 88, 89, 90)
-OR `name` LIKE "%y%"
-OR `name` LIKE "%Y%Y";
+WHERE UPPER(`name`) LIKE ("%Y%Y%")
+OR id_distrib = 42
+OR (id_distrib >= 62 AND id_distrib <= 71)
+OR (id_distrib >= 88 AND id_distrib <= 90)
+LIMIT 2, 5;
