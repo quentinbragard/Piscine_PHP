@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Balloon</title>
+        <style>
+            .balloon
+            {
+                background:red;
+                border-radius:200px;
+                width:200px;
+                height:200px;
+            }
+        </style>
+        
+        
+    </head>
+    <body>
+        <div class="balloon" id="1" onclick="inflate()" onmouseout="deflate()"></div>
+
+        <script>
+            var width;
+            var height;
+            width = 200;
+            height = 200;
+            i = 0;
+            colors = ["red", "green", "blue"];
+                function inflate() {
+                  width = parseInt(width + 10);
+                  height = parseInt(height + 10);
+                  i++;
+                  i = i% 3
+                  if (width > 420)
+                    width = parseInt(200);
+                if (height > 420)
+                    height = parseInt(200);
+                  document.getElementById('1').style.width = width +"px";
+                  document.getElementById('1').style.height = height +"px";
+                  document.getElementById('1').style.background = colors[i];
+                  console.log(colors[i]);
+                }
+                function deflate() {
+                  width = parseInt(width - 10);
+                  height = parseInt(height - 10);
+                  i--;
+                  if (i < 0)
+                    i = 2;
+                  if (width < 200)
+                    width = parseInt(200);
+                if (height < 200)
+                    height = parseInt(200);
+                  document.getElementById('1').style.width = width +"px";
+                  document.getElementById('1').style.height = height +"px";
+                  document.getElementById('1').style.background = colors[i];
+                  console.log(colors[i]);
+                }
+        </script>
+    </body>
+</html>

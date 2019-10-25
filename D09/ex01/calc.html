@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calc</title>
+
+        <script> window.setInterval(function(){ alert("Please, use me..."); }, 30000); </script>    
+    </head>
+
+    <body>
+
+        <div class="container">
+            <input id="calc1" type="text">
+            <select id="ope">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input id="calc2" type="text"><br>
+            <button onclick="myFunction()">Try it</button>
+            <div id="res"></div>
+        </div>
+
+    <script>
+    
+    function myFunction()
+    {
+        var x = document.getElementById("calc1").value;
+        var y = document.getElementById("calc2").value;
+        var o = document.getElementById("ope").value;
+        if (Number.isNaN(parseInt(x)) || Number.isNaN(parseInt(y)))
+            alert("Error"); 
+        else if (x < 0 || y < 0)
+            alert("Error");
+        else
+        {
+            if ((o == "/"  || o == "%") && y == 0)
+                z ="It's over 9000!";
+            else
+                var z = eval(x + o + y);
+            console.log(z);
+            alert(z);
+        }
+    }
+    </script>
+
+    </body>
+</html>
